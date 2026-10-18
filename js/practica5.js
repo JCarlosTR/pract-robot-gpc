@@ -146,11 +146,9 @@ function loadScene()
   texMadera.wrapS = texMadera.wrapT = THREE.RepeatWrapping;
 
   // Materiales
-  // suelo con un reflejo
+  // suelo con reflejo
   const matSuelo = new THREE.MeshPhongMaterial({
-    map: texSuelo,
-    envMap: entorno, reflectivity: 0.25,
-    specular: 0x666666, shininess: 30
+    map: texSuelo
   });
 
   // base + esparrago + eje de metal con Phong
@@ -178,7 +176,7 @@ function loadScene()
   });
 
   // Materiales que responden al check "Alambres"
-  materiales.push(matSuelo, matMetal, matMadera, matPinza, matRotula);
+  materiales.push(matMetal, matMadera, matPinza, matRotula);
 
   // Suelo
   const suelo = new THREE.Mesh( new THREE.PlaneGeometry(2000, 2000), matSuelo );
